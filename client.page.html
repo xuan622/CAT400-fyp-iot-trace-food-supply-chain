@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+        <div>
+            <div *ngIf="scannedData">
+                <div *ngFor="let data of condition7">
+                    <div *ngIf="scannedData == data.code">
+                        <ion-row>
+                            <h4>Product Code: {{data.code}}</h4>
+                        </ion-row>
+                        <ion-row>
+                            <h5>Product Name: {{data.productName}}</h5>
+                        </ion-row>
+                        <ion-row>
+                            <h5>Product Type: {{data.productType}}</h5>
+                        </ion-row>
+                        <ion-row>
+                            <h5>Manufacturer Company: {{data.company}}</h5>
+                        </ion-row>
+                        <ion-row>
+                            <h5>Manufacturer Location: {{data.manufactureLocation}}</h5>
+                        </ion-row>
+                        <ion-row>
+                            <h5>Manufacturer Country: {{data.manufactureCountry}}</h5>
+                        </ion-row>
+                        <ion-row justify-content-center>
+                            <ion-col align-self-center>
+                                <h3>Packaging Hub</h3>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Registered By: {{data.checkinByEmail}}</span>
+                            </ion-col>
+                            <ion-col size-md="6">
+                                <span>UID: {{data.checkinByUid}}</span>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Registered Time: {{data.dateTime}}</span>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+                <div *ngFor="let i of condition8">
+                    <div *ngIf="scannedData == i.code">
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Dispatched By: {{i.checkoutByEmail}}</span>
+                            </ion-col>
+                            <ion-col size-md="6">
+                                <span>UID: {{i.checkoutByUid}}</span>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Dispatched Time: {{i.dateTime}}</span>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+                <ion-row>
+                    <ion-col size-md="6">
+                        <h5>Safe Temperature Range: 23&#8451; - 26&#8451;</h5>
+                    </ion-col>
+                    <ion-col size-md="6">
+                        <h5>Safe Humidity Range: 50% - 60%</h5>
+                    </ion-col>
+                </ion-row>
+            </div>
+
+            <ion-row>
+                <div>
+                    <canvas id="barCanvas">{{barChart}}</canvas>
+                </div>
+            </ion-row>
+            <ion-row>
+                <div>
+                    <canvas id="barCanvas2">{{lineChart}}</canvas>
+                </div>
+            </ion-row>
+            <div *ngIf="scannedData">
+                <div *ngFor="let j of condition9">
+                    <div *ngIf="scannedData == j.code">
+                        <ion-row justify-content-center>
+                            <ion-col align-self-center>
+                                <h3>Storage Hub</h3>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Registered By: {{j.checkinByEmail}}</span>
+                            </ion-col>
+                            <ion-col size-md="6">
+                                <span>UID:{{j.checkinByUid}}</span>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Registered Time:{{j.dateTime}}</span>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+                <div *ngFor="let k of condition10">
+                    <div *ngIf="scannedData == k.code">
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Dispatched By: {{k.checkoutByEmail}}</span>
+                            </ion-col>
+                            <ion-col size-md="6">
+                                <span>UID:{{k.checkoutByUid}}</span>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size-md="6">
+                                <span>Dispatched Time:{{k.dateTime}}</span>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+                <ion-row>
+                    <ion-col size-md="6">
+                        <h5>Safe Temperature Range: 18&#8451; - 24&#8451;</h5>
+                    </ion-col>
+                    <ion-col size-md="6">
+                        <h5>Safe Humidity Range: 50% - 55%</h5>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <ion-row>
+                <div>
+                    <canvas id="barCanvas3">{{lineChart2}}</canvas>
+                </div>
+            </ion-row>
+            <ion-row>
+                <div>
+                    <canvas id="barCanvas4">{{lineChart3}}</canvas>
+                </div>
+            </ion-row>
+            <ion-row>
+                <div>
+                    <canvas id="barCanvas5">{{lineChart4}}</canvas>
+                </div>
+            </ion-row>
+        </div>
+    </ion-grid>    
+
+</ion-content>
